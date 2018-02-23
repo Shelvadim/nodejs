@@ -1,4 +1,4 @@
-module.exports -{
+module.exports ={
     entry:'./src/index.js',
     output: {
         path:__dirname + '/public',
@@ -6,6 +6,10 @@ module.exports -{
     },
     module:{
         loaders:[
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+              },
             {
                 test:/\.js$/,
                 loader:'babel-loader'
