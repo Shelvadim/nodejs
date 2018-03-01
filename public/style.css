@@ -1,0 +1,10 @@
+.ContPrev {
+  margin: 1em;
+  border: 1px solid green; }
+  .ContPrev .categoryName {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25em 0.5em;
+    font-weight: bold;
+    background-color: #eee; }
+  .ContPrev .contestName {
+    padding: 0.5em; }

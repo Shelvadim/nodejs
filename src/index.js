@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-import data from './components/testData';
+//import data from './components/testData';
 
 
 ReactDOM.render(    
-    <App contests={data.contests} />,
+    <App />,
     document.getElementById('root')
 );
 

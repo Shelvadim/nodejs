@@ -1,14 +1,26 @@
 import React from 'react';
+import axios from 'axios';
 import Header from './Header';
 import ContPrev from './ContPrev';
+//import data from './testData';
 
 class App extends React.Component{
    state={
-       pageHeader:'Naming Contest'
+       pageHeader:'Naming Contest',
+       contests:[]
     };
     componentDidMount(){
-        
+        //ajax
+        axios.get('/api/contests')
+        .then(resp=>{
+            //console.log(resp.data.contests);
+            this.setState({
+                    contests: resp.data.contests
+            });
+        })
+        .catch(console.error)        
     }
+    
     componentWillUnmount(){
         
     }
@@ -17,8 +29,8 @@ class App extends React.Component{
             <div className="App">
                 <Header message={this.state.pageHeader} />
                 <div>
-                    {this.props.contests.map(contest=>
-                        <ContPrev {...contest}/>
+                    {this.state.contests.map(contest=>
+                        <ContPrev key={contest.id} {...contest}/>
                     )}
                     
                 </div>            
